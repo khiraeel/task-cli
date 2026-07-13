@@ -1,0 +1,17 @@
+task-tracker/
+├── cmd/
+│   └── task-cli/
+│       └── main.go       # Точка входа. Парсит аргументы командной строки
+├── internal/
+│   ├── model/
+│   │   └── task.go       # Структура Task (ID, Description, Status, CreatedAt, UpdatedAt)
+│   ├── repository/
+│   │   └── json_store.go # Логика работы с файлом (чтение/запись JSON)
+│   └── service/
+│       └── task_service.go# Бизнес-логика (add, update, delete, list по статусам)
+├── go.mod                # Инициализация модуля
+└── tasks.json            # Файл, куда будут сохраняться задачи (создастся сам)
+
+go build -o task-cli.exe main.go
+
+.\task-cli add <>
